@@ -186,3 +186,18 @@ Servicios implementados
 =====================
 - URL:http://localhost:3000/libros/libro/1
 - Metodo: GET
+
+-- Borrar libros de una compra
+=====================
+- URL:http://localhost:3000/carrito/borrarLibros
+- Metodo: DELETE
+-Ejemplo1
+{
+   "borrarLibros":[
+   		{	
+   			"carritoId":1,
+   			"libroId":1,
+   			"clienteId":3
+   		}
+   	]
+}

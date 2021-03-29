@@ -191,7 +191,7 @@ Servicios implementados
 =====================
 - URL:http://localhost:3000/carrito/borrarLibros
 - Metodo: DELETE
--Ejemplo1
+- Ejemplo1
 {
    "borrarLibros":[
    		{	

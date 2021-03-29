@@ -185,4 +185,4 @@ Servicios implementados
 -- Recuperar un Libro
 =====================
 - URL:http://localhost:3000/libros/libro/1
-- Metodo: DELETE
+- Metodo: GET

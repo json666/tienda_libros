@@ -20,9 +20,18 @@ const adicionarCarrito = async ({
     return carrito;
   };
 
+  const borrarLibros = async (carritoId,clienteId, libroId) => {
+    const borradoLibros = {
+      activo: false,
+    };
+    const libro = await Carrito.update(borradoLibros, { where: { id:carritoId,clienteId,libroId } });
+    return libro;
+  };
+
 
 
   module.exports={
-      adicionarCarrito
+      adicionarCarrito,
+      borrarLibros
 
   }

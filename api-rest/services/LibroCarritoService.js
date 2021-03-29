@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const LibroCarrito = require("../repositories/LibroCarritoRepository");
+const LibroCarritoRepository = require("../repositories/LibroCarritoRepository");
 
 
 
@@ -18,7 +18,7 @@ const adicionarCarrito = async ({
     libroId,
     clienteId
 }) => {
-    return await LibroCarrito.adicionarCarrito({
+    return await LibroCarritoRepository.adicionarCarrito({
         cantidad,
         observaciones,
         libroId,
@@ -27,7 +27,13 @@ const adicionarCarrito = async ({
     });
 };
 
+const borrarLibros = async (carritoId,clienteId, libroId) => {
+    const libro = await LibroCarritoRepository.borrarLibros(carritoId,clienteId, libroId);
+    return libro;
+};
+
 
 module.exports = {
-    adicionarCarrito
+    adicionarCarrito,
+    borrarLibros
 };

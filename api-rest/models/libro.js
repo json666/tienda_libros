@@ -54,7 +54,35 @@ module.exports = (sequelize, DataTypes) => {
     activo: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
-    }
+    },
+    thumbnailUrl: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    descripcion_larga: {
+      type: DataTypes.STRING(500),
+      allowNull: false
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    categoria: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    language: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    anio: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    imagen: {
+      type: DataTypes.BLOB,
+      allowNull: true
+    },
 
 
   }, {

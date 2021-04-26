@@ -8,13 +8,20 @@ const obtieneLibroById = async (id) => {
     return await LibroRepository.obtieneLibroById(id);
 };
 
-const adicionarLibro = async ({ titulo,
+const adicionarLibro = async ({
+    titulo,
     descripcion,
     precio_unitario,
     precio_proveedor,
     existencia,
     ISBN,
     num_pag,
+    descripcion_larga,
+    status,
+    categoria,
+    anio,
+    languaje,
+    thumbnailUrl,
     autorId }) => {
     return await LibroRepository.adicionarLibro({
         titulo,
@@ -24,6 +31,12 @@ const adicionarLibro = async ({ titulo,
         existencia,
         ISBN,
         num_pag,
+        descripcion_larga,
+        status,
+        categoria,
+        anio,
+        languaje,
+        thumbnailUrl,
         autorId
     });
 };
@@ -45,6 +58,13 @@ const obtieneTodosLibros = async (from, limit, filters, attributes) => {
         attributes
     );
     return { count, users: rows };
+};
+
+
+const obtieneTodos = async () => {
+    const { count, rows } = await LibroRepository.obtieneTodos(
+    );
+    return { count, books: rows };
 };
 
 const borrarLibro = async (id) => {
@@ -83,5 +103,6 @@ module.exports = {
     adicionarLibro,
     obtieneTodosLibros,
     modificarLibro,
-    borrarLibro
+    borrarLibro,
+    obtieneTodos
 };

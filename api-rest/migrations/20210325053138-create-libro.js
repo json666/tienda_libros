@@ -32,10 +32,38 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      num_pag:{
-        type:Sequelize.INTEGER,
-        allowNull:false
-    },
+      num_pag: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      thumbnailUrl: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      descripcion_larga: {
+        type: Sequelize.STRING(500),
+        allowNull: false
+      },
+      status: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      categoria: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      language: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      anio: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+      },
+      imagen: {
+        type: Sequelize.BLOB,
+        allowNull: true
+      },
       activo: {
         type: Sequelize.BOOLEAN,
         defaultValue: true,

@@ -22,7 +22,7 @@ npx sequelize-cli model:generate --name Autor --attributes nombre:string,edad:in
 
 Comando para generar la tabla Libro
 ```bash
-npx sequelize-cli model:generate --name Libro --attributes titulo:string,descripcion:string(500),precio_unitario:doble,precio_proveedor:doble, existencia:doble,ISBN:string,num_pag:string,activo:boolean
+npx sequelize-cli model:generate --name Libro --attributes titulo:string,descripcion:string(500),precio_unitario:doble,precio_proveedor:doble, existencia:doble,ISBN:string,num_pag:string,thumbnailUrl:string,descripcion_larga:string,status:string,categoria:string,language:string,anio:integer,imagen:blob,activo:boolean
 ```
 
 Comando para generar la tabla Cliente

@@ -5,7 +5,8 @@ const {
     obtieneLibroById,
     obtieneTodosLibros,
     modificarLibro,
-    borrarLibro
+    borrarLibro,
+    obtieneTodos
   } = require("../services/LibroService");
 
 const app = express();
@@ -43,6 +44,19 @@ app.post("/libros", async (req, res) => {
       });
     }
   });
+
+
+  app.get("/libros/todoslosLibros", async (req, res) => {
+    try{
+      return res.json(await obtieneTodos());
+    } catch (e) {
+      console.log(e);
+      return res.status(400).json({
+        message: e.message,
+      });
+    }
+  });
+
 
   app.get("/libros/libro/:libroId", async (req, res) => {
     try {

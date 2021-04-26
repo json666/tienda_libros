@@ -1,7 +1,7 @@
 const Libro = require("../models").Libro;
 
 const obtieneLibroById = async (id) => {
-  return await Libro.findOne({ where: { id: id, activo:true } });
+  return await Libro.findOne({ where: { id: id, activo: true } });
 };
 
 const obtieneTodosLibros = async (from, limit, filters, attributes) => {
@@ -11,6 +11,11 @@ const obtieneTodosLibros = async (from, limit, filters, attributes) => {
     where: filters,
     attributes,
   });
+  return data;
+};
+
+const obtieneTodos = async () => {
+  const data = await Libro.findAndCountAll();
   return data;
 };
 
@@ -27,6 +32,12 @@ const adicionarLibro = async ({
   existencia,
   ISBN,
   num_pag,
+  descripcion_larga,
+  status,
+  categoria,
+  anio,
+  languaje,
+  thumbnailUrl,
   autorId
 }) => {
   const libro = await Libro.create({
@@ -37,6 +48,12 @@ const adicionarLibro = async ({
     existencia,
     ISBN,
     num_pag,
+    descripcion_larga,
+    status,
+    categoria,
+    anio,
+    languaje,
+    thumbnailUrl,
     autorId
   });
   return libro;
@@ -46,7 +63,7 @@ const borrarLibro = async (id) => {
   const deleteState = {
     activo: false,
   };
-  const libro = await Libro.update(deleteState, { where: { id:id } });
+  const libro = await Libro.update(deleteState, { where: { id: id } });
   return libro;
 };
 
@@ -85,6 +102,7 @@ module.exports = {
   adicionarLibro,
   obtieneTodosLibros,
   modificarLibro,
-  borrarLibro
+  borrarLibro,
+  obtieneTodos
 
 }
